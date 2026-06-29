@@ -4,7 +4,7 @@
 - How does the option Both Eyes work, when we already have two eyes separately?
 - Anything else to be scanned by AI?
 
-3. Other Test Results has to be implemented by us??
+3. Other Test Results has to be implemented by us?? (what other tests?)
 
 4. Cancer Screening: Scan the photo of the report and classify as normal or abnormal? Which report?
 
@@ -18,3 +18,5 @@
 8. Photos captured by the users for AI inference and data extraction, should be saved in the system or not?
 - Should the users be given a feature to choose whether they want to save the photos in Document Wallet or not? (If yes, should they also be able to choose whether to save locally or cloud?)
 - If they choose cloud then system cloud or user's cloud account?
+
+9. What do we need to do in Mental Health exactly? Most features already exist and it looks complete to us.
