@@ -1,0 +1,20 @@
+1. Only Standard digital sphygmomanometer reading pictures to be read by AI?
+
+2. Vision Test: Right eye, Left eye, Both eyes acuity value to be scanned by AI from any report or manually enter this?
+- How does the option Both Eyes work, when we already have two eyes separately?
+- Anything else to be scanned by AI?
+
+3. Other Test Results has to be implemented by us??
+
+4. Cancer Screening: Scan the photo of the report and classify as normal or abnormal? Which report?
+
+5. Document Wallet: Documents to be stored in Cloud or Local, based on user's preference. Should it not be stored in CheckUpp's cloud? Only in user's cloud account?
+- What about the links? Where to store?
+
+6. Your Health Overview has to be interactive, should the name be changed to "Your Appointments Overview"? Or is it supposed to serve other purposes except for being a dashboard of all appointments?
+
+7. Partial Save to be implemented only for the health checks (including cancer screenings) only? Or for immunisation too?
+
+8. Photos captured by the users for AI inference and data extraction, should be saved in the system or not?
+- Should the users be given a feature to choose whether they want to save the photos in Document Wallet or not? (If yes, should they also be able to choose whether to save locally or cloud?)
+- If they choose cloud then system cloud or user's cloud account?
