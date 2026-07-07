@@ -4,10 +4,10 @@ module.exports = {
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
 
   testMatch: [
-    "**/Test_cases/**/*.test.js",
-    "**/Test_cases/**/*.test.jsx",
-    "**/Test_cases/**/*.test.ts",
-    "**/Test_cases/**/*.test.tsx"
+    "**/tests/**/*.test.js",
+    "**/tests/**/*.test.jsx",
+    "**/tests/**/*.test.ts",
+    "**/tests/**/*.test.tsx"
   ],
 
   transformIgnorePatterns: [
