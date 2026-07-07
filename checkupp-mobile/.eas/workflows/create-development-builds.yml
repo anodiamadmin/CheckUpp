@@ -1,0 +1,36 @@
+name: Create Development Builds
+
+defaults:
+  tools:
+    corepack: true
+
+# Manual by default. Run with:
+# eas workflow:run .eas/workflows/create-development-builds.yml
+#
+# Uncomment this to build dev clients on every push.
+# on:
+#   push:
+#     branches: ["*"]
+
+jobs:
+  android_development_build:
+    name: Build Android Development
+    type: build
+    params:
+      platform: android
+      profile: development
+
+  ios_development_build:
+    name: Build iOS Development
+    type: build
+    params:
+      platform: ios
+      profile: development
+
+  # Useful when you want a dev client for the iOS Simulator.
+  # ios_development_simulator_build:
+  #   name: Build iOS Simulator Development
+  #   type: build
+  #   params:
+  #     platform: ios
+  #     profile: development-simulator

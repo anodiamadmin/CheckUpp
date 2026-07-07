@@ -1,0 +1,79 @@
+{
+  "project_info": {
+    "project_number": "724362475917",
+    "firebase_url": "https://checkupp-health-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "checkupp-health",
+    "storage_bucket": "checkupp-health.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724362475917:android:d34481135d2e266cca65c4",
+        "android_client_info": {
+          "package_name": "com.app.healthpassport"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724362475917-b0f2lml8tfkrat3vvj53dels67m9qod1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.healthpassport",
+            "certificate_hash": "a156a2fa976ca438243451d961de2dc3e582a852"
+          }
+        },
+        {
+          "client_id": "724362475917-ecga2qc884g1ik1pkk7raukemipmvnip.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.healthpassport",
+            "certificate_hash": "96ac437bac157d3762df418b0818f7a59499186c"
+          }
+        },
+        {
+          "client_id": "724362475917-jvsutij8fg0qjg0o8rse7qmt413k49of.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.healthpassport",
+            "certificate_hash": "1a78f76e2be20c399fd751fb4d6692dee955bfac"
+          }
+        },
+        {
+          "client_id": "724362475917-p3fv9i930v7spjshk9s6si581pu4qoc9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.healthpassport",
+            "certificate_hash": "3dbadf02010cee8d916b578176750a6d9eb63cb6"
+          }
+        },
+        {
+          "client_id": "724362475917-kee7ls41amrvnbp1djsiqe62su4g2tjr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnIPVo3hogPunlB8E9BKgovdc7juwPMFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724362475917-kee7ls41amrvnbp1djsiqe62su4g2tjr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "724362475917-b835gut9pnpt0oa9t00il635g0r1d43q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.healthpassport"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

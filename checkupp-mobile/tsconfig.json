@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": [
+      "jest", "react", "react-native"
+    ],
+    "strict": true,
+    "lib": [
+      "ES2020",
+      "dom"
+    ],
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "bundler",
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@firebase/auth": [
+        "./node_modules/@firebase/auth/dist/index.rn.d.ts"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    ".expo/types/**/*.d.ts",
+    "nativewind-env.d.ts"
+  ],
+  "exclude": [
+    "old/**/*"
+  ],
+  "extends": "expo/tsconfig.base"
+}

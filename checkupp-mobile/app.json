@@ -1,0 +1,98 @@
+{
+  "expo": {
+    "name": "CheckUpp",
+    "slug": "healthpassport",
+    "version": "2.3.2",
+    "orientation": "portrait",
+    "icon": "./assets/icons/ios-light.png",
+    "userInterfaceStyle": "light",
+    "scheme": "healthpassport",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.app.healthpassport",
+      "googleServicesFile": "./lib/firebase/GoogleService-Info.plist",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCalendarsUsageDescription": "CheckUpp needs access to your calendar to help you schedule and manage checkups.",
+        "NSCameraUsageDescription": "CheckUpp needs access to your camera for taking photos during checkups and scanning documents.",
+        "NSPhotoLibraryUsageDescription": "CheckUpp needs access to your photo library to let you upload or share medical images.",
+        "NSLocationWhenInUseUsageDescription": "CheckUpp uses your location to suggest nearby health facilities and provide location-based services.",
+        "NSUserTrackingUsageDescription": "CheckUpp may use your identifier for personalized content and analytics.",
+        "UNUserNotificationCenterUsageDescription": "CheckUpp uses notifications to remind you about upcoming appointments and updates.",
+        "NSMicrophoneUsageDescription": "CheckUpp may use the microphone if you record audio notes during a checkup.",
+        "NSContactsUsageDescription": "CheckUpp may access your contacts if you choose to invite others or share checkup details.",
+        "NSBluetoothAlwaysUsageDescription": "CheckUpp may use Bluetooth to connect with health devices near you.",
+        "NSBluetoothPeripheralUsageDescription": "CheckUpp may use Bluetooth to detect and communicate with health monitoring devices.",
+        "NSHealthShareUsageDescription": "CheckUpp may access your health data to provide better insights and recommendations.",
+        "NSHealthUpdateUsageDescription": "CheckUpp may update your health data to sync checkup results.",
+        "NSRemindersUsageDescription": "CheckUpp may access reminders to help you manage health-related tasks.",
+        "NSMotionUsageDescription": "CheckUpp may access motion data to track activity levels and provide wellness insights.",
+        "NSFaceIDUsageDescription": "CheckUpp may use Face ID for secure login and account verification."
+      },
+      "icon": {
+        "light": "./assets/icons/ios-light.png",
+        "dark": "./assets/icons/ios-dark.png",
+        "tinted": "./assets/icons/ios-tinted.png"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icons/adaptive-icon.png",
+        "monochromeImage": "./assets/icons/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.app.healthpassport",
+      "googleServicesFile": "./lib/firebase/google-services.json",
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.CAMERA"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/icons/adaptive-icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-media-library",
+      "@react-native-firebase/app",
+      "@react-native-firebase/crashlytics",
+      "@react-native-google-signin/google-signin",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static",
+            "buildReactNativeFromSource": true
+          }
+        }
+      ],
+      "expo-secure-store",
+      "expo-web-browser",
+      "expo-mail-composer",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/icons/splash-icon-dark.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "image": "./assets/icons/splash-icon-light.png",
+            "backgroundColor": "#000000"
+          }
+        }
+      ],
+      "@react-native-community/datetimepicker",
+      "expo-sharing"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "df684713-99ad-463f-a47b-3aa7ab82376e"
+      }
+    },
+    "owner": "checkupp"
+  }
+}
