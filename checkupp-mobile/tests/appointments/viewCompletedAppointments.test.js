@@ -27,7 +27,7 @@ describe('View Completed Appointments', () => {
         status: 'Completed',
         completedDate: '15 Jun 2026',
         completedTime: '11:00 AM',
-      }
+      },
     ];
 
     const { getByText } = render(
@@ -59,7 +59,7 @@ describe('View Completed Appointments', () => {
         status: 'Completed',
         completedDate: '10 Jun 2026',
         completedTime: '09:30 AM',
-      }
+      },
     ];
 
     const { getByText } = render(
@@ -82,7 +82,7 @@ describe('View Completed Appointments', () => {
    * Verify the user can tap a Completed appointment
    * to view its details.
    */
-  it('should navigate to the appointment details screen when a Completed appointment is tapped', () => {
+  it('should navigate to the Appointment Details screen when a Completed appointment is tapped', () => {
 
     const navigate = jest.fn();
 
@@ -92,7 +92,7 @@ describe('View Completed Appointments', () => {
         patientId: 101,
         name: 'Annual Physical Examination',
         status: 'Completed',
-      }
+      },
     ];
 
     const { getByText } = render(
@@ -106,12 +106,9 @@ describe('View Completed Appointments', () => {
     fireEvent.press(getByText('Annual Physical Examination'));
 
     expect(navigate).toHaveBeenCalledTimes(1);
-    expect(navigate).toHaveBeenCalledWith(
-      'AppointmentDetails',
-      {
-        appointmentId: '1',
-      }
-    );
+    expect(navigate).toHaveBeenCalledWith('AppointmentDetails', {
+      appointmentId: '1',
+    });
 
   });
 
@@ -134,10 +131,10 @@ describe('View Completed Appointments', () => {
         patientId: 202,
         name: 'Dental Cleaning',
         status: 'Completed',
-      }
+      },
     ];
 
-    const { queryByText, getByText } = render(
+    const { getByText, queryByText } = render(
       <YourAppointments
         appointments={appointments}
         loggedInUserId={101}

@@ -27,7 +27,7 @@ describe('View Rescheduled Appointments', () => {
         status: 'Rescheduled',
         updatedDate: '18 Jul 2026',
         updatedTime: '03:00 PM',
-      }
+      },
     ];
 
     const { getByText } = render(
@@ -59,7 +59,7 @@ describe('View Rescheduled Appointments', () => {
         status: 'Rescheduled',
         updatedDate: '15 Jul 2026',
         updatedTime: '11:30 AM',
-      }
+      },
     ];
 
     const { getByText } = render(
@@ -82,7 +82,7 @@ describe('View Rescheduled Appointments', () => {
    * Verify the user can tap a Rescheduled appointment
    * to view its details.
    */
-  it('should navigate to the appointment details screen when a Rescheduled appointment is tapped', () => {
+  it('should navigate to the Appointment Details screen when a Rescheduled appointment is tapped', () => {
 
     const navigate = jest.fn();
 
@@ -92,7 +92,7 @@ describe('View Rescheduled Appointments', () => {
         patientId: 101,
         name: 'Cardiology Consultation',
         status: 'Rescheduled',
-      }
+      },
     ];
 
     const { getByText } = render(
@@ -106,12 +106,9 @@ describe('View Rescheduled Appointments', () => {
     fireEvent.press(getByText('Cardiology Consultation'));
 
     expect(navigate).toHaveBeenCalledTimes(1);
-    expect(navigate).toHaveBeenCalledWith(
-      'AppointmentDetails',
-      {
-        appointmentId: '1',
-      }
-    );
+    expect(navigate).toHaveBeenCalledWith('AppointmentDetails', {
+      appointmentId: '1',
+    });
 
   });
 
@@ -134,10 +131,10 @@ describe('View Rescheduled Appointments', () => {
         patientId: 202,
         name: 'Dental Checkup',
         status: 'Rescheduled',
-      }
+      },
     ];
 
-    const { queryByText } = render(
+    const { getByText, queryByText } = render(
       <YourAppointments
         appointments={appointments}
         loggedInUserId={101}

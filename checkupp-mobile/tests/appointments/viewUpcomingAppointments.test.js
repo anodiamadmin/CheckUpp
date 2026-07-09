@@ -6,7 +6,8 @@ describe('View Upcoming Appointments', () => {
 
   /**
    * AC-1
-   * Verify all Upcoming appointments are displayed under the Upcoming tab.
+   * Verify all Upcoming appointments are displayed
+   * under the Upcoming tab.
    */
   it('should display all Upcoming appointments under the Upcoming tab', () => {
 
@@ -26,7 +27,7 @@ describe('View Upcoming Appointments', () => {
         status: 'Upcoming',
         date: '02 Jul 2026',
         time: '02:30 PM',
-      }
+      },
     ];
 
     const { getByText } = render(
@@ -58,7 +59,7 @@ describe('View Upcoming Appointments', () => {
         status: 'Upcoming',
         date: '25 Jun 2026',
         time: '10:00 AM',
-      }
+      },
     ];
 
     const { getByText } = render(
@@ -67,6 +68,8 @@ describe('View Upcoming Appointments', () => {
         loggedInUserId={101}
       />
     );
+
+    fireEvent.press(getByText('Upcoming'));
 
     expect(getByText('GP Checkup')).toBeTruthy();
     expect(getByText('25 Jun 2026')).toBeTruthy();
@@ -79,7 +82,7 @@ describe('View Upcoming Appointments', () => {
    * Verify the user can tap an Upcoming appointment
    * to view its details.
    */
-  it('should navigate to the appointment details screen when an Upcoming appointment is tapped', () => {
+  it('should navigate to the Appointment Details screen when an Upcoming appointment is tapped', () => {
 
     const navigate = jest.fn();
 
@@ -89,7 +92,7 @@ describe('View Upcoming Appointments', () => {
         patientId: 101,
         name: 'GP Checkup',
         status: 'Upcoming',
-      }
+      },
     ];
 
     const { getByText } = render(
@@ -103,17 +106,16 @@ describe('View Upcoming Appointments', () => {
     fireEvent.press(getByText('GP Checkup'));
 
     expect(navigate).toHaveBeenCalledTimes(1);
-    expect(navigate).toHaveBeenCalledWith(
-      'AppointmentDetails',
-      { appointmentId: '1' }
-    );
+    expect(navigate).toHaveBeenCalledWith('AppointmentDetails', {
+      appointmentId: '1',
+    });
 
   });
 
   /**
    * AC-4
-   * Verify only appointments belonging to the logged-in user
-   * are displayed under the Upcoming tab.
+   * Verify only Upcoming appointments associated
+   * with the logged-in user are displayed.
    */
   it('should display only Upcoming appointments associated with the logged-in user', () => {
 
@@ -129,7 +131,7 @@ describe('View Upcoming Appointments', () => {
         patientId: 202,
         name: 'Dental Checkup',
         status: 'Upcoming',
-      }
+      },
     ];
 
     const { queryByText } = render(
@@ -139,6 +141,8 @@ describe('View Upcoming Appointments', () => {
       />
     );
 
+    fireEvent.press(getByText('Upcoming'));
+
     expect(queryByText('GP Checkup')).toBeTruthy();
     expect(queryByText('Dental Checkup')).toBeNull();
 
@@ -146,7 +150,7 @@ describe('View Upcoming Appointments', () => {
 
   /**
    * AC-5
-   * Verify an appropriate message is displayed
+   * Verify an appropriate empty state message is displayed
    * when there are no Upcoming appointments.
    */
   it('should display "No upcoming appointments" when no Upcoming appointments exist', () => {

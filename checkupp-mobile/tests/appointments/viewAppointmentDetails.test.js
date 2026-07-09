@@ -20,7 +20,7 @@ describe('View Appointment Details', () => {
         patientId: 101,
         name: 'Cardiology Consultation',
         status: 'Upcoming',
-      }
+      },
     ];
 
     const { getByText } = render(
@@ -34,12 +34,9 @@ describe('View Appointment Details', () => {
     fireEvent.press(getByText('Cardiology Consultation'));
 
     expect(navigate).toHaveBeenCalledTimes(1);
-    expect(navigate).toHaveBeenCalledWith(
-      'AppointmentDetails',
-      {
-        appointmentId: '1',
-      }
-    );
+    expect(navigate).toHaveBeenCalledWith('AppointmentDetails', {
+      appointmentId: '1',
+    });
 
   });
 
@@ -124,7 +121,6 @@ describe('View Appointment Details', () => {
     expect(getByText('25 Jun 2026')).toBeTruthy();
     expect(getByText('10:00 AM')).toBeTruthy();
     expect(getByText('City Health Clinic')).toBeTruthy();
-
     expect(getByText('N/A')).toBeTruthy();
 
   });
