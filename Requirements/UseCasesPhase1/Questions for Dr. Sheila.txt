@@ -1,10 +1,10 @@
-1. Only Standard digital sphygmomanometer reading pictures to be read by AI?
+1. Only Standard digital sphygmomanometer reading pictures to be read by AI for Cardiovascular Reading?
 
 2. Vision Test: Right eye, Left eye, Both eyes acuity value to be scanned by AI from any report or manually enter this?
 - How does the option Both Eyes work, when we already have two eyes separately?
 - Anything else to be scanned by AI?
 
-3. Other Test Results has to be implemented by us?? (what other tests?)
+3. Other Test Results photo scanning has to be implemented by us?? (what other tests?)
 
 4. Cancer Screening: Scan the photo of the report and classify as normal or abnormal? Which report?
 
@@ -23,4 +23,4 @@
 
 10. Immunisation is only accessible via Quick Actions. Should it not have a separate, dedicated bottomnavtab?
 
-11. Pregnancy tab is visible to the females as you as 2 years old, it should be restricted to an age bracket, what's the age bracket?
+11. Pregnancy tab is visible to the females as young as 2 years old, it should be restricted to an age bracket, what's the age bracket?
