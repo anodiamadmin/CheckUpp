@@ -1,7 +1,7 @@
 import React from "react";
 import { render, waitFor } from "@testing-library/react-native";
 import Toast from "react-native-toast-message";
-import CardiovascularReading from "@/app/path/to/CardiovascularReading";
+import CardiovascularHealth from "../../components/screening/CardiovascularHealth";
 import { getAutosavedCardiovascularData } from "@/lib/features/cardiovascular";
 
 jest.mock("@/lib/features/cardiovascular", () => ({

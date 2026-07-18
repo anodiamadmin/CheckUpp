@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent, waitFor } from "@testing-library/react-native";
-import CardiovascularReading from "@/app/cardiovascular-reading";
+import CardiovascularHealth from "../../components/screening/CardiovascularHealth";
 
 // Mock autosave service
 jest.mock("@/services/cardiovascularService", () => ({
