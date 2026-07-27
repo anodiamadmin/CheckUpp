@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "rootDir": "..",
+    "types": ["node"],
+    "module": "CommonJS",
+    "moduleResolution": "Node"
+  },
+  "include": ["./**/*.ts", "../src/config/**/*.ts", "../src/db/**/*.ts"]
+}
