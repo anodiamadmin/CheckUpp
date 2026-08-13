@@ -1,0 +1,91 @@
+-----------------
+|Initial Version|
+-----------------
+
+model UserSpecificCondition {
+  id             String                  @id @default(uuid())
+  userId         String
+  user           User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  conditionName  String
+  monitoringType String                  // e.g. "Blood test", "Imaging/ Radiology", "Other: [custom]"
+  frequencyType  String                  // "Monthly" | "Every 3 Months" | "Every 6 Months" | "Annually" | "Custom"
+  customInterval Int?                    // Numeric stepper value when frequencyType == "Custom"
+  customUnit     String?                 // "Days" | "Months" | "Years"
+  careProvider   String
+  createdAt      DateTime                @default(now())
+  updatedAt      DateTime                @updatedAt
+  records        UserSpecificConditionRecord[]
+
+  @@index([userId])
+}
+
+model UserSpecificConditionRecord {
+  id                		String          @id @default(uuid())
+  userSpecificConditionId 	String
+  userSpecificCondition   	UserSpecificCondition @relation(fields: [userSpecificConditionId], references: [id], onDelete: Cascade)
+  userId            		String
+  user              		User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  checkDate         		DateTime
+  outcomeNotes      		String?
+  createdAt         		DateTime        @default(now())
+  updatedAt         		DateTime        @updatedAt
+
+  @@index([userSpecificConditionId])
+  @@index([userId])
+}
+
+
+============================================================================================================================================================================================
+---------------
+|Final Version|
+---------------
+
+
+model UserSpecificCondition {
+  id                    String                        @id @default(uuid())
+  userId                String
+  user                  User                          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Directly maps to the 4 frontend inputs
+  conditionName         String
+  monitoringType        String                        // "Blood test", "Imaging/ Radiology", "Doctor Review", "Endoscopy", "Other: [custom]"
+  frequencyType         String                        // "Monthly", "Every 3 Months", "Every 6 Months", "Annually", "Custom"
+  customMonitoringType  Int?                          // Numeric stepper value (only populated if frequencyType == "Custom")
+  customFrequencyType   String?                       // "Days", "Months", "Years" (only populated if frequencyType == "Custom")
+  careProvider          String
+  
+  createdAt             DateTime                      @default(now())
+  updatedAt             DateTime                      @updatedAt
+
+  records               UserSpecificConditionRecord[]
+  dueItems              ScreeningDueItem[]            // Powers the "Your Health Overview" dashboard
+
+  @@index([userId])
+}
+
+model UserSpecificConditionRecord {
+  id                        String                @id @default(uuid())
+  userSpecificConditionId   String
+  userSpecificCondition     UserSpecificCondition @relation(fields: [userSpecificConditionId], references: [id], onDelete: Cascade)
+  
+  userId                    String
+  user                      User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Directly maps to Screen 5 inputs
+  checkDate                 DateTime
+  outcomeNotes              String?
+  
+  createdAt                 DateTime              @default(now())
+  updatedAt                 DateTime              @updatedAt
+
+  @@index([userSpecificConditionId])
+  @@index([userId])
+}
+
+// Ensure this is added to the existing ScreeningDueItem model:
+model ScreeningDueItem {
+  // ... existing fields ...
+
+  userSpecificConditionId   String?
+  userSpecificCondition     UserSpecificCondition? @relation(fields: [userSpecificConditionId], references: [id], onDelete: Cascade)
+}
