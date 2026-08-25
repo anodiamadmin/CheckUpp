@@ -1,0 +1,58 @@
+---------------
+|NEW ADDITIONS|
+---------------
+model UserSpecificCondition {
+  id                        String                        @id @default(uuid())
+  userId                    String
+  user                      User                          @relation("UserSpecificConditions", fields: [userId], references: [id], onDelete: Cascade) 
+  conditionName             String
+  monitoringType            String                        
+  frequencyType             String                        
+  customMonitoringType      String?                          
+  customFrequencyTypeNumber Int?
+  customFrequencyTypeUnit   String?                       
+  careProvider              String?  
+  createdAt                 DateTime                      @default(now())
+  updatedAt                 DateTime                      @updatedAt
+  records                   UserSpecificConditionRecord[]
+  dueItems                  ScreeningDueItem[]            
+
+  @@index([userId])
+}
+
+model UserSpecificConditionRecord {
+  id                        String                @id @default(uuid())
+  userSpecificConditionId   String
+  userSpecificCondition     UserSpecificCondition @relation(fields: [userSpecificConditionId], references: [id], onDelete: Cascade)  
+  userId                    String
+  user                      User                  @relation("UserSpecificConditionRecords", fields: [userId], references: [id], onDelete: Cascade)
+  checkDate                 DateTime
+  outcomeNotes              String
+  createdAt                 DateTime              @default(now())
+  updatedAt                 DateTime              @updatedAt
+  
+  @@index([userSpecificConditionId])
+  @@index([userId])
+}
+
+============================================================================================================================================================================================
+
+---------------
+|MODIFICATIONS|
+---------------
+
+model User {
+  // ... (existing fields like id, email, name, etc.) ...
+
+  // NEW ADDITIONS:
+  specificConditions        UserSpecificCondition[]      @relation("UserSpecificConditions")
+  specificConditionRecords  UserSpecificConditionRecord[] @relation("UserSpecificConditionRecords")
+}
+
+model ScreeningDueItem {
+  // ... (existing fields like id, userId, dueDate, screeningDefinitionId, etc.) ...
+
+  // NEW ADDITIONS:
+  userSpecificConditionId String?
+  userSpecificCondition   UserSpecificCondition? @relation(fields: [userSpecificConditionId], references: [id], onDelete: Cascade)
+}
